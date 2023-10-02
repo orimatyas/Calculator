@@ -1,4 +1,5 @@
-﻿namespace Calculator
+﻿using CalculatorLibrary;
+namespace CalculatorProgram
 {
     internal class Program
     {
@@ -7,6 +8,7 @@
             bool endApp = false;
             Console.WriteLine("Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
+            Calculator calculator = new Calculator();
 
             while (!endApp)
             {
@@ -45,16 +47,16 @@
 
                 try
                 {
-                    result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    result = calculator.DoOperation(cleanNum1, cleanNum2, op);
                     if (double.IsNaN(result))
                     {
-                        Console.WriteLine("This operation will result in a mathematical error.\n");
+                        Console.WriteLine("This operation will result in error.\n");
                     }
                     else Console.WriteLine("Your result: {0:0.##}\n", result);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
+                    Console.WriteLine("An exception occurred trying to do the math.\n - Details: " + e.Message);
                 }
 
                 Console.WriteLine("------------------------\n");
@@ -64,6 +66,7 @@
 
                 Console.WriteLine("\n");
             }
+            calculator.Finish();
             return;
         }
     }
