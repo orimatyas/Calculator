@@ -22,7 +22,7 @@ namespace CalculatorProgram
                 double cleanNum1 = 0;
                 while (!double.TryParse(numInput1, out cleanNum1))
                 {
-                    Console.Write("This is not valid input. Please enter an integer value: ");
+                    Console.Write("This is not valid input. Please enter a number: ");
                     numInput1 = Console.ReadLine();
                 }
 
@@ -32,7 +32,7 @@ namespace CalculatorProgram
                 double cleanNum2 = 0;
                 while (!double.TryParse(numInput2, out cleanNum2))
                 {
-                    Console.Write("This is not valid input. Please enter an integer value: ");
+                    Console.Write("This is not valid input. Please enter a number: ");
                     numInput2 = Console.ReadLine();
                 }
 
@@ -61,7 +61,7 @@ namespace CalculatorProgram
 
                 Console.WriteLine("------------------------\n");
 
-                Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
+                Console.Write("Press 'n' and Enter to close the app, or press any other key to continue: ");
                 if (Console.ReadLine() == "n") endApp = true;
 
                 Console.WriteLine("\n");
